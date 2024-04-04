@@ -12,10 +12,9 @@ CREATE TABLE books
     name   VARCHAR,
     year   INT
 );
-
 CREATE TABLE library
 (
     people_id INT REFERENCES people (id),
-    books_id  INT REFERENCES books (id),
-    PRIMARY KEY (people_id, books_id)
+    books_id  INT PRIMARY KEY REFERENCES books (id)
 );
+ALTER SEQUENCE books_id_seq RESTART WITH 2;

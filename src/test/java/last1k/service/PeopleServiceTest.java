@@ -1,12 +1,9 @@
 package last1k.service;
 
-import last1k.ReadDto.PeopleReadDto;
-import org.assertj.core.api.Assertions;
+import last1k.ReadDto.PersonReadDto;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.annotation.Rollback;
-import org.springframework.transaction.annotation.Transactional;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -16,7 +13,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 public class PeopleServiceTest {
     @Autowired
     private PeopleService peopleService;
-    PeopleReadDto personDto = PeopleReadDto.builder()
+    PersonReadDto personDto = PersonReadDto.builder()
             .fullName("Test2")
             .id(1)
             .yearOfBirth(210)

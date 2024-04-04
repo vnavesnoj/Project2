@@ -1,15 +1,14 @@
 package last1k.entity.mapper;
 
-import last1k.ReadDto.PeopleReadDto;
+import last1k.ReadDto.PersonReadDto;
 import last1k.entity.People;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Component
-public class PeopleReadDtoMapper implements Mapper<People, PeopleReadDto> {
+public class PeopleReadDtoMapper implements Mapper<People, PersonReadDto> {
     @Override
-    public PeopleReadDto map(People entity) {
-        return PeopleReadDto.builder()
+    public PersonReadDto map(People entity) {
+        return PersonReadDto.builder()
                 .fullName(entity.getFullName())
                 .yearOfBirth(entity.getYearOfBirth())
                 .id(entity.getId())

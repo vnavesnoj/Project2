@@ -1,18 +1,18 @@
 package last1k.ReadDto;
 
-import last1k.entity.Books;
 import lombok.Builder;
 import lombok.Value;
 
 import java.util.ArrayList;
 import java.util.List;
-
 @Value
 @Builder
-public class PeopleReadDto {
+public class BookReadDto {
     private Integer id;
-    private String fullName;
-    private Integer yearOfBirth;
+    private String author;
+    private String name;
+    private Integer year;
     @Builder.Default
-    private List<BooksReadDto> books = new ArrayList<>();
+    private List<PersonReadDto> people = new ArrayList<>();
+//
 }

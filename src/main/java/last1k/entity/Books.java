@@ -1,12 +1,7 @@
 package last1k.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.ManyToMany;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import jakarta.persistence.*;
+import lombok.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,14 +11,19 @@ import java.util.List;
 @AllArgsConstructor
 @Data
 @Builder
+@NamedEntityGraph(
+        name = "entityGraph",
+        attributeNodes = @NamedAttributeNode("people")
+)
 public class Books {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String author;
     private String name;
     private Integer year;
 
-    @ManyToMany
+    @ManyToMany(mappedBy = "books")
     @Builder.Default
     private List<People> people = new ArrayList<>();
 }
